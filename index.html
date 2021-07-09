@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="/js/main.js" type="module"></script>
+  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+  <title>To Do List</title>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="todosHeader">TO DO LIST</header>
+    <main class="todosMain">
+      <div class="addToDo">
+        <label class="addToDo__label" for=""><span class="iconify" data-icon="ic:baseline-keyboard-arrow-down" data-inline="false"></span></label>
+        <input class="addToDo__input" type="text" placeholder="What needs to be done?">
+      </div>
+      <div class="todosList" data-component="todosList">
+        <ul>
+          <!-- <li class="todosList__item">
+            <div class="todosList__input"></div>
+            <div class="todosList__item__task">task1</div>
+          </li> -->
+        </ul>
+      </div>
+      
+      <footer class="todosFooter">
+        <div class="menuFooter">
+          <div class="menuFooter__infoAmountTask">0 item left</div>
+          <div class="menuFooter__buttons">
+            <button>All</button>
+            <button>Active</button>
+            <button>Completed</button>
+          </div>
+          <div class="menuFooter__buttons">
+            <button>Clear completed</button>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <footer class="mainFooter">
+      <p>Двічі клацніть, щоб відредагувати завдання</p>
+      <p>Створено <a class="mainFooter__author" href="https://github.com/Zaichuk-Dmytro">Emerald</a></p> 
+    </footer>
+  </div>
+
+</body>
+</html>

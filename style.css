@@ -1,0 +1,176 @@
+*{
+  margin: 0;
+  
+  font-family: 'Noto Sans KR', sans-serif;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #F5F5F5;
+}
+
+.wrapper{
+  margin: 0 auto;
+  max-width: 100%;
+  min-width: 600px;
+  width: 35%;
+
+}
+
+.todosHeader, .todosMain, .mainFooter{
+  display: flex;
+  justify-content: center;
+  
+}
+
+/* #region header*/
+.todosHeader{
+  height: 150px;
+  align-items: flex-end;
+  font-size: 70px;
+  color: rgba(175, 47, 47, 0.35);;
+}
+
+/* #endregion*/
+
+
+.todosMain{
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%),
+   0 25px 50px 0 rgb(0 0 0 / 10%);
+}
+
+.addToDo {
+  width: 100%;  
+  display: flex;
+  padding: 15px;
+  border-bottom: 1px solid #ededed;
+
+}
+
+.addToDo__input{
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 19px;
+  
+  
+}
+
+/* #region placeholder */
+.addToDo__input::placeholder {
+  font-style: italic;
+  color: #d1d1d1;
+}
+
+:focus::-webkit-input-placeholder {color: transparent}
+
+/* #endregion */
+
+.addToDo__label {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  font-size: 25px;
+  padding-right: 15px;
+
+  /* visibility: hidden; */
+}
+
+
+
+/* #region todoLIST */
+.todosList ul{
+  padding: 0;
+}
+
+.todosList__item {
+  display: flex;
+  list-style: none;
+  font-size: 16px;
+  padding: 15px;
+  color: #313131 ;
+  font-weight: 400;
+  border-bottom: 1px solid #ededed;
+}
+
+.todosList__input{
+  display: flex;
+  justify-content: center;
+  height: 27px;
+  width: 29px;
+  border: 1px solid #e5e5e5;
+  border-radius: 15px;
+}
+
+.todosList__input:hover{
+  transition: 2s;
+  background: url('https://api.iconify.design/ic:baseline-done.svg?color=green') no-repeat center center / contain;
+}
+
+.todosList__item__task {
+  width: 100%;
+  padding-left: 18px;
+  
+}
+/*#endregion*/
+
+
+/* #region todosFooter */
+.todosFooter {
+  padding: 10px 15px;
+  height: 45px;
+  box-shadow: 0 1px 1px rgb(0 0 0 / 20%),
+              0 8px 0 -3px #f6f6f6,
+              0 9px 1px -3px rgb(0 0 0 / 20%),
+              0 16px 0 -6px #f6f6f6,
+              0 17px 2px -6px rgb(0 0 0 / 20%);
+  /* display: none; */
+}
+
+.menuFooter{
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  color: #4d4d4d ;
+  
+}
+.menuFooter__infoAmountTask{
+  padding: 0 10px;
+}
+
+.menuFooter__buttons button{
+  border: none;
+  background-color: #fff;
+  color: #4d4d4d ;
+  font-size: 15px;
+  padding: 0 10px;
+}
+
+
+/* #endregion */
+
+/* #region main footer */
+.mainFooter{
+  flex-direction: column;
+  align-items: center;
+  color: #bfbfbf;
+  margin-top: 50px;
+  font-size: 10px;
+}
+
+.mainFooter__author{
+  text-decoration: none;
+  color: #bfbfbf;
+}
+
+.mainFooter__author:hover{
+  text-decoration: underline;
+}
+/* #endregion */
+
+
+
+
