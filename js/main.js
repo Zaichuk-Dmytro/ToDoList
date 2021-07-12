@@ -3,5 +3,5 @@
 
 
  let tasksPage = new TasksPage({
-   element: document.querySelector('[data-component="todosList"]'),
+   element: document.querySelector('.wrapper'),
  })

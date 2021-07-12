@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="/js/main.js" type="module"></script>
   <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
@@ -16,29 +16,30 @@
   <div class="wrapper">
     <header class="todosHeader">TO DO LIST</header>
     <main class="todosMain">
-      <div class="addToDo">
-        <label class="addToDo__label" for=""><span class="iconify" data-icon="ic:baseline-keyboard-arrow-down" data-inline="false"></span></label>
-        <input class="addToDo__input" type="text" placeholder="What needs to be done?">
+      <div class="addToDo" data-element="addToDo">
+        <div class="addToDo__label"  data-element="toDo__label">
+          <span class="iconify" data-icon="ic:baseline-keyboard-arrow-down"
+            data-inline="false" data-element="todosLabel"></span>
+        </div>
+        <input class="addToDo__input" type="text" placeholder="What needs to be done?" 
+        data-element="toDoInput">
       </div>
-      <div class="todosList" data-component="todosList">
-        <ul>
-          <!-- <li class="todosList__item">
-            <div class="todosList__input"></div>
-            <div class="todosList__item__task">task1</div>
-          </li> -->
+      <div class="todosList"  >
+        <ul data-component="todosList">
+          
         </ul>
       </div>
       
-      <footer class="todosFooter">
+      <footer class="todosFooter" data-component="todosFooter">
         <div class="menuFooter">
-          <div class="menuFooter__infoAmountTask">0 item left</div>
+          <div class="menuFooter__infoAmountTask"> 1  item left</div>
           <div class="menuFooter__buttons">
             <button>All</button>
             <button>Active</button>
             <button>Completed</button>
           </div>
           <div class="menuFooter__buttons">
-            <button>Clear completed</button>
+            <button class="buttonClear" data-element="buttonClear">Clear completed</button>
           </div>
         </div>
       </footer>

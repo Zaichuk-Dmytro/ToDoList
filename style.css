@@ -1,7 +1,7 @@
 *{
   margin: 0;
   
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Rubik', sans-serif;
   box-sizing: border-box;
 }
 
@@ -54,7 +54,7 @@ body{
   width: 100%;
   border: none;
   outline: none;
-  font-size: 19px;
+  font-size: 22px;
   
   
 }
@@ -73,10 +73,10 @@ body{
   display: flex;
   justify-content: center;
   align-items:center;
-  font-size: 25px;
+  font-size: 22px;
   padding-right: 15px;
 
-  /* visibility: hidden; */
+  visibility: hidden;
 }
 
 
@@ -84,12 +84,15 @@ body{
 /* #region todoLIST */
 .todosList ul{
   padding: 0;
+  
 }
 
 .todosList__item {
   display: flex;
+  justify-content: center;
+  align-items: center;
   list-style: none;
-  font-size: 16px;
+  font-size: 22px;
   padding: 15px;
   color: #313131 ;
   font-weight: 400;
@@ -99,22 +102,31 @@ body{
 .todosList__input{
   display: flex;
   justify-content: center;
+  
   height: 27px;
   width: 29px;
   border: 1px solid #e5e5e5;
   border-radius: 15px;
 }
 
-.todosList__input:hover{
-  transition: 2s;
+.todosList__item__task {
+  width: 100%;
+  word-break: break-word;
+  padding-left: 18px;
+  color: #313131;
+}
+
+.todosList__item.selected .todosList__item__task{
+  color: #e5e5e5;
+  text-decoration: line-through;
+}
+
+.todosList__item.selected .todosList__input{
+  border: 1px solid green;
   background: url('https://api.iconify.design/ic:baseline-done.svg?color=green') no-repeat center center / contain;
 }
 
-.todosList__item__task {
-  width: 100%;
-  padding-left: 18px;
-  
-}
+
 /*#endregion*/
 
 
@@ -127,12 +139,14 @@ body{
               0 9px 1px -3px rgb(0 0 0 / 20%),
               0 16px 0 -6px #f6f6f6,
               0 17px 2px -6px rgb(0 0 0 / 20%);
-  /* display: none; */
+  display: none; 
 }
 
 .menuFooter{
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  height: 100%;
   font-size: 15px;
   color: #4d4d4d ;
   
@@ -149,6 +163,9 @@ body{
   padding: 0 10px;
 }
 
+.buttonClear {
+  visibility: hidden;
+}
 
 /* #endregion */
 
