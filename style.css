@@ -155,7 +155,7 @@ body{
   padding: 0 10px;
 }
 
-.menuFooter__buttons button{
+.menuFooter__buttons button, .menuFooter__button button{
   border: none;
   background-color: #fff;
   color: #4d4d4d ;
@@ -163,8 +163,20 @@ body{
   padding: 0 10px;
 }
 
+/* .menuFooter__button button{
+  border: none;
+  background-color: #fff;
+  color: #4d4d4d ;
+  font-size: 15px;
+  padding: 0 10px;
+} */
+
 .buttonClear {
   visibility: hidden;
+}
+.buttonClear:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 /* #endregion */
