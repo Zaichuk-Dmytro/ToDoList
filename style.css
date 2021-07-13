@@ -169,6 +169,7 @@ body{
 }
 .menuFooter__infoAmountTask{
   padding: 0 10px;
+  width: 105px;
 }
 
 .menuFooter__buttons button, .menuFooter__button button{
@@ -188,8 +189,9 @@ body{
 } */
 
 .buttonClear {
-  visibility: hidden;
-}
+  /* visibility: hidden; */
+  
+  }
 .buttonClear:hover {
   cursor: pointer;
   text-decoration: underline;

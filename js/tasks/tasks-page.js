@@ -11,6 +11,7 @@ export default class TasksPage extends Components{
     this._arrTasks = [],
 
     this._count = 0;
+    this._lengthActive = document.querySelector('.menuFooter__infoAmountTask')
     this._initMainInput()
     this._initTaskItems()
     this._initFooter()
@@ -27,12 +28,12 @@ export default class TasksPage extends Components{
       if (!eventData) {
         return
       }
-      // this._showHiddenElement() 
       this._arrTasks.push({
         id: this._getToDoId(),
         value: eventData,
         selected: false,
       });
+      this._getLengthActive()
       this.taskItems._show(this._arrTasks)
     })
 
@@ -43,7 +44,7 @@ export default class TasksPage extends Components{
       this._arrTasks.map((tasks) => {
         tasks.selected = !allSelected
       })
-      
+      this._getLengthActive()
       this.taskItems._render()
     })
     
@@ -60,11 +61,13 @@ export default class TasksPage extends Components{
         task.selected = !task.selected
       }
      })
+     this._getLengthActive()
      this.taskItems._render()
     })
 
     this.taskItems.subscribe('clickButClear', (dataEventId) => {
       this._arrTasks = this._arrTasks.filter(task => task.id != dataEventId)
+      this._getLengthActive()
       this.taskItems._show(this._arrTasks)
     })
   }
@@ -79,9 +82,28 @@ export default class TasksPage extends Components{
      this._arrTasks = this._arrTasks.filter(task => !task.selected )
      this.taskItems._show(this._arrTasks)
     })
+
+    this.footer.subscribe('clickAll', () => {
+     
+    })
+
+    this.footer.subscribe('clickActive', () => {
+      
+    })
+
+    this.footer.subscribe('clickCompleted', () => {
+      
+    })
   }
 
-  
+  _getLengthActive() {
+    this._length =  this._arrTasks.filter(task => task.selected == false).length
+    if (this._length == '1') {
+      this._lengthActive.innerHTML = `${this._length} item left`
+    } else {
+      this._lengthActive.innerHTML = `${this._length} items left`
+    }
+  }
 
   _getToDoId(){
     return this._count++

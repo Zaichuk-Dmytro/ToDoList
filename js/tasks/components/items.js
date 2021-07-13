@@ -48,7 +48,6 @@ export default class Items extends Components {
   
   
   _render(){
-    // this._getLengthActive()
     this._showHiddenElement()
     this._showButtonClear()
     this._element.innerHTML = `

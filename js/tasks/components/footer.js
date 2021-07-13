@@ -10,7 +10,17 @@ export default class Footer extends Components {
       this.emit('clickClear')
     })
 
+    this.on('click', '[data-element="buttonAll"]', () => {
+      this.emit('clickAll')
+    })
 
+    this.on('click', '[data-element="buttonActive"]', () => {
+      this.emit('clickActive')
+    })
+
+    this.on('click', '[data-element="buttonCompleted"]', () => {
+      this.emit('clickCompleted')
+    })
 
 
     
