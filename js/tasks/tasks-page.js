@@ -62,7 +62,11 @@ export default class TasksPage extends Components{
      })
      this.taskItems._render()
     })
-    
+
+    this.taskItems.subscribe('clickButClear', (dataEventId) => {
+      this._arrTasks = this._arrTasks.filter(task => task.id != dataEventId)
+      this.taskItems._show(this._arrTasks)
+    })
   }
 
   _initFooter() {

@@ -15,6 +15,10 @@ export default class Items extends Components {
       let dataEventId = event.target.closest('.todosList__item').getAttribute('id')
       this.emit('clickTaskInput', dataEventId)
     })
+    this.on('click', '.todos__buttonClear', (event) => {
+      let dataEventId = event.target.closest('.todosList__item').getAttribute('id')
+      this.emit('clickButClear', dataEventId)
+    })
   }
 
   _show(arrTasks){
@@ -52,6 +56,7 @@ export default class Items extends Components {
       <li class="todosList__item ${ task.selected ? 'selected' : ''}" id="${task.id}" ">
         <div class="todosList__input"></div>
         <div class="todosList__item__task">${task.value}</div>
+        <div class="todos__buttonClear"><div>
       </li>`).join('')}`
     
     
