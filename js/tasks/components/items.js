@@ -4,7 +4,11 @@ import Components from "./components.js";
 export default class Items extends Components {
   constructor({element}){
     super({element})
-    this._arrTasks = []
+    
+    
+    
+    
+    
 
     this._statusFiltred = 'ALL';
     
@@ -41,6 +45,7 @@ export default class Items extends Components {
     if(this._arrTasks.length > 0) {
       this.keyboardIcon.style.visibility = 'visible'
       this.todosFooter.style.display = 'block';   
+      
     } else {
       this.keyboardIcon.style.visibility = 'hidden'
       this.todosFooter.style.display = 'none';  
@@ -48,6 +53,7 @@ export default class Items extends Components {
   }
 
   _status(dataStatus) {
+    
     this._statusFiltred = dataStatus || 'ALL'
     if (this._statusFiltred == 'ACTIVE') {
      return this._cloneArrTasks = this._arrTasks.filter(task => task.selected == false)
@@ -59,11 +65,18 @@ export default class Items extends Components {
     }
     
   }
+  _r() {
+    localStorage.setItem('todos', JSON.stringify(this._arrTasks));
+    
+  }
   
   _render(){
+    
+    this._r()
     this._status(this._statusFiltred)
     this._showHiddenElement()
     this._showButtonClear()
+    console.log(this._arrTasks)
     this._element.innerHTML = `
     ${this._cloneArrTasks.map(task => `
       <li class="todosList__item ${ task.selected ? 'selected' : ''}" id="${task.id}" ">

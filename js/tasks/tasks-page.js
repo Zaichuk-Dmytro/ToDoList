@@ -8,16 +8,16 @@ import Footer from "./components/footer.js";
 export default class TasksPage extends Components{
   constructor({element}){
     super({element})
-    this._arrTasks = [],
-
+    this._arrTasks = JSON.parse(localStorage.getItem('todos') || '[]'),
+console.log(this._arrTasks)
     
-    this._count = 0;
+    this._count = this._arrTasks.length ? Math.max(...this._arrTasks.map(task => task.id )) : 0
     this._lengthActive = document.querySelector('.menuFooter__infoAmountTask')
     this._initMainInput()
     this._initTaskItems()
     this._initFooter()
-    
-    
+    this._getLengthActive()
+    this.taskItems._show(this._arrTasks)
   }
 
   _initMainInput() {
@@ -124,6 +124,6 @@ export default class TasksPage extends Components{
       [...document.querySelectorAll('.filterBtn')].map(task => task.classList.remove('active'))
     }
   _getToDoId(){
-    return this._count++
+    return ++this._count
   }
 }
