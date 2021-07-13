@@ -10,6 +10,7 @@ export default class TasksPage extends Components{
     super({element})
     this._arrTasks = [],
 
+    
     this._count = 0;
     this._lengthActive = document.querySelector('.menuFooter__infoAmountTask')
     this._initMainInput()
@@ -34,7 +35,9 @@ export default class TasksPage extends Components{
         selected: false,
       });
       this._getLengthActive()
+      
       this.taskItems._show(this._arrTasks)
+      
     })
 
     this.input.subscribe('selectedAll', () => {
@@ -63,6 +66,7 @@ export default class TasksPage extends Components{
      })
      this._getLengthActive()
      this.taskItems._render()
+     
     })
 
     this.taskItems.subscribe('clickButClear', (dataEventId) => {
@@ -84,15 +88,26 @@ export default class TasksPage extends Components{
     })
 
     this.footer.subscribe('clickAll', () => {
-     
+      this.taskItems._status('ALL')
+      this._removeClassActive()
+      document.querySelector('.buttonAll').classList.add('active')
+
+      this.taskItems._render()
+
     })
 
     this.footer.subscribe('clickActive', () => {
-      
+      this.taskItems._status('ACTIVE')
+      this._removeClassActive()
+      document.querySelector('.buttonActive').classList.add('active')
+      this.taskItems._render()
     })
 
     this.footer.subscribe('clickCompleted', () => {
-      
+      this.taskItems._status('COMPLETED')
+      this._removeClassActive()
+      document.querySelector('.buttonCompleted').classList.add('active')
+      this.taskItems._render()
     })
   }
 
@@ -105,6 +120,9 @@ export default class TasksPage extends Components{
     }
   }
 
+  _removeClassActive() {
+      [...document.querySelectorAll('.filterBtn')].map(task => task.classList.remove('active'))
+    }
   _getToDoId(){
     return this._count++
   }

@@ -168,34 +168,41 @@ body{
   
 }
 .menuFooter__infoAmountTask{
-  padding: 0 10px;
+  /* padding: 0 10px; */
   width: 105px;
 }
 
 .menuFooter__buttons button, .menuFooter__button button{
-  border: none;
+  border: 1px solid transparent;
   background-color: #fff;
   color: #5a5a5a ;
-  font-size: 15px;
-  padding: 0 10px;
+  
+  /* font-size: 15px; */
+  margin: 0 7px;
 }
 
-/* .menuFooter__button button{
-  border: none;
-  background-color: #fff;
-  color: #4d4d4d ;
-  font-size: 15px;
-  padding: 0 10px;
-} */
+.filterBtn.active {
+  border: 1px solid transparent;
+  border-radius: 3px;
+  border-color: rgba(175, 47, 47, 0.2);
+} 
 
-.buttonClear {
-  /* visibility: hidden; */
-  
-  }
+.filterBtn:hover {
+  border: 1px solid transparent;
+  border-radius: 3px;
+  border-color: rgba(175, 47, 47, 0.2);
+} 
+
+
 .buttonClear:hover {
   cursor: pointer;
   text-decoration: underline;
 }
+
+
+
+
+
 
 /* #endregion */
 
