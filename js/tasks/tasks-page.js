@@ -9,8 +9,7 @@ export default class TasksPage extends Components{
   constructor({element}){
     super({element})
     this._arrTasks = JSON.parse(localStorage.getItem('todos') || '[]'),
-console.log(this._arrTasks)
-    
+
     this._count = this._arrTasks.length ? Math.max(...this._arrTasks.map(task => task.id )) : 0
     this._lengthActive = document.querySelector('.menuFooter__infoAmountTask')
     this._initMainInput()
@@ -74,6 +73,22 @@ console.log(this._arrTasks)
       this._getLengthActive()
       this.taskItems._show(this._arrTasks)
     })
+
+    this.taskItems.subscribe('saveEditTask', (dataArr) => {
+      if(dataArr.value) {
+        this._arrTasks.map(task => {
+          if(task.id == dataArr.id) {
+            task.value = dataArr.value
+          }
+          
+        })
+      } else {
+        this._arrTasks = this._arrTasks.filter(task => task.id != dataArr.id)
+      }
+      this.taskItems._show(this._arrTasks)
+      
+      
+    })
   }
 
   _initFooter() {
@@ -110,6 +125,8 @@ console.log(this._arrTasks)
       this.taskItems._render()
     })
   }
+
+
 
   _getLengthActive() {
     this._length =  this._arrTasks.filter(task => task.selected == false).length
